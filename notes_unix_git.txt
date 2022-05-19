@@ -192,6 +192,23 @@ There are 4 stages we have in GIT as
 3) Git Directory 
 
 
+the 3 basic commands as
+
+1) git add .
+
+2) git commit -m "mesage"
+
+3) git push origin branch_name
+
+4) To see the current status of git repo
+
+    git status 
+
+5) To see the diff. beween commited/uncommitted data then run the command as
+
+    git diff
+
+
 
 
 
