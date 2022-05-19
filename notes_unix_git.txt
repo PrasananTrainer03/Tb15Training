@@ -1,0 +1,189 @@
+Operating System : 
+___________________
+
+An operating system is a software package, that which acts as an interface between user and application programs. 
+
+There are 2 types of operating systems known as
+
+1) Single User
+
+	DOS
+
+	WINDOWS
+
+2) Multi User 
+
+
+	UNIX
+
+UNIX is an operating system, that which produces more security features. 
+
+Unix Architecture has a layered architecture, with 2 components
+
+	1) KERNAL
+
+		Kernal is heart w.r.t. Unix env, which takes care of 
+
+		-> Process Management
+
+		-> Memory Management
+
+		-> File Management
+
+		-> Service Management 
+
+	In bootstraping process, the kernal loaded into memory and initiates
+	various other processes for users to effictively make use of unix OS. 
+
+	2) System Programs 
+
+	Shell : Shell acts as an interface between the user and UNIX OS. 
+
+	This is called command interpreter, which used to interpret statements. 
+
+1) pwd -> Print Working Directory (Present Working Directory) 
+
+2) cd -> Returns to the default directory. 
+
+3) ls -> Used to see the list of files
+
+4) ls -l -> Used to display long listing of files. 
+
+5) mkdir -> used to make a directory 
+
+   mkdir <directory_name> 
+
+   mkdir tb15
+
+6) cd directory_name :  To change to particular directory 
+
+   cd tb15   
+
+7) touch file_name : Creates an empty file
+
+8) cat > fileName : Used to create a new file. 
+
+after typing to save the file press <ctrl+d>
+
+9) cat file_name : Displays the contents of the file. 
+
+10) mv old_name new_name : Used to rename old file with new file_name 
+
+11) rm file_name : used to remove the file.
+
+12) rmdir directory_name : used to remove the directory
+
+13) cp location1 location2 : used to copy file from one location to another
+
+Pipes and filters
+__________________
+
+wc : Used to display no.of words/lines/characters from a file. 
+
+wc fileName : Display lines/words/chars of a file. 
+
+wc -c fileName : displays only characters
+
+wc -w filename : displays only words
+
+wc -l filename : displays only lines 
+
+
+15) head : Displays no.of lines from top 
+
+	head -5 filename : Displays first 5 lines of the file
+
+16) tail : Displays no.of lines from last
+
+tail -5 filename : displays last 5 lines of the file
+
+17) sort : used to sort the given file data 
+
+sort file_name : sorts the file content in ascending order
+
+sort -r file_name : sorts the file content in descending order
+
+< for input any file 
+
+> for redirect output to any file specified 
+
+
+18) grep (Globally search for regular Expression and PrintOut) 
+
+    grep "training" training.txt -> Displays all lines where the word training exists
+
+    grep -c "training" training.txt -> Displays count, no.of times the word training exists 
+
+    grep -n "training" training.txt -> Displays all lines where the word training exists including line nos
+
+
+19) tr : Used to translate from one foramt to another (mostly casing and delimters we can use) 
+
+ tr "," "  " < info.txt > res3.txt
+
+ tr "[a-z]" "[A-Z]" < res1.txt > upper.txt
+
+________________________________________________________________________________________
+
+What is Version Control System :
+__________________________________
+
+Version Control system is a system, that records changes of single file or set of files. 
+
+When multiple people are working in same project, then lot of changes will happen on multiple files simultaneousy, as we need to keep track of all those things, can be maintained by using Version Control System. 
+
+To implement such kind of things, we have git 
+
+Git is a free and open source distributed version control system deigned to handle everything from small to large projects with speed and efficiency. 
+
+Every Git working directroy contains a full fledged repository with complete history and full revision tracking capabilities. 
+
+It will not dependent on network access or central server. 
+
+There are 3 main stages we have in git as 
+
+1) Working Directory
+
+	Single checkoiut of one version of the project (current repository folder we call as working directory)
+
+2) Staging Area
+
+	It is a simpel file, generally present in git directory, that stores information about the next commit. 
+
+	Whichever files, we need to upload or update in git, we need to add to the staging area. 
+
+3) Git Directory 
+
+	Stores the metata and object database for the project (contains all remote files for which repository is having permissions to upload and access) 
+
+Git Life Cycle : 
+________________
+
+There are 4 stages we have in GIT as 
+
+1) Working Directory
+
+   THis is the default repository folder with branch name.
+
+2) Staging Area
+
+3) Local Repository
+
+4) Remote Repository 
+
+
+
+3) Git Directory 
+
+
+
+
+
+
+
+
+
+
+
+
+
