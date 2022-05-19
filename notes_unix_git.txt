@@ -167,11 +167,27 @@ There are 4 stages we have in GIT as
 
 2) Staging Area
 
+	To add the files to the staging area 
+
+	git add filename (or) 
+	
+        if you want to add all the files to the staging area, then 
+
+	git add .
+
+
 3) Local Repository
+
+	To add the files to the local repository 
+
+	git commit -m "unix/git notes"
+
 
 4) Remote Repository 
 
+	To upload the file(s) to remote repository, then 
 
+	git push origin branch_name 
 
 3) Git Directory 
 
