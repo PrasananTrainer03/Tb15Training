@@ -208,10 +208,51 @@ the 3 basic commands as
 
     git diff
 
+6) git log --oneline : Displays list of commands you run in git
 
+7) git checkout fileName : used to cancel the changes of working directory
 
+git checkout stud.txt
 
+8) To unstage the given file, then 
 
+To unstage the file 
+
+git reset HEAD filename
+
+9) To create a branch, then 
+
+git branch branch_name 
+
+10) To move to the branch, then 
+
+git checkout branch_name
+
+You can do the above by using single line as
+
+11) git checkout -b branch_name 
+
+   git checkout -b koushik
+
+12) to see list of branches, then 
+
+   git branch
+
+13) To see list of remote branches, then  
+   
+   git branch -r
+
+14) To refresh the branches, then 
+
+   git remote update
+
+15) To see all local and remote branches then 
+
+   git branch -a 
+
+16) To delete a branch, 
+
+  git branch -D branch_name 
 
 
 
