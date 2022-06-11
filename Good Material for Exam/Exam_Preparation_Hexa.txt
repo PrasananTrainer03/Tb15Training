@@ -1,0 +1,426 @@
+1) UNIT Testing 
+
+Please prepare PPT of Unit Testing first ppt
+
+Junit allows you to perform unit testing. 
+
+*** Prepare Unit Testing first ppt all definitions and answers ***
+
+
+1) Which Package allows you to perform junit 
+
+org.junit.Test 
+
+@Test 
+
+2) Which annotation used as if method to be executed only once in the entire test life cycle before test case
+
+    @BeforeClass 
+
+
+3) Which annotation used for everytime, the test case will be executed
+
+    @Before 
+
+
+4) Which annotation used for everytime, at the end of test case 
+
+    @After 
+
+
+5) Which annotation used only once, before closing the test case 
+
+    @AfterClass 
+
+7) What would be output for this program
+
+        int[] a=new int[]{1,2};
+        int[] b =new int[]{1,2};
+        assertArrayEquals("hello",a,b);
+
+In this it checks array values are correct or not, if correct it dont display any error message
+
+if array values are not equal, then it will raise an error message caption with "hello"
+
+
+  assertEquals("Error in String","Hello","hello");
+
+Here, first arg is the error message caption
+
+	if values are same, it prints no message
+
+	if values are wrong, then it prints Caption message with System error message. First arg. always the caption error msg. 
+
+
+Identify the dependency for junit test case. 
+
+__________________________________________________________________________________________________
+
+
+
+The method which annotated w.r.t. @BeforeClass must be static and will be executed only once in entire testing phase
+
+Predicting Output : 
+________________________
+
+package com.hexaware.trainer;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import org.junit.After;  
+import org.junit.AfterClass;  
+import org.junit.Before;  
+import org.junit.BeforeClass;
+
+import org.junit.Test;
+
+
+public class DemoTest {
+    static Demo obj;
+    @BeforeClass 
+    public static void setUp() {
+        obj = new Demo();
+        System.out.println("Global Object Created...");
+    }
+    @AfterClass 
+    public static void cleanUp() {
+        obj = null;
+        System.out.println("Object Deallocated...");
+    }
+    @Before 
+    public void showInfo() {
+        System.out.println("Test Case Started...");
+    }
+    @After 
+    public void clearInfo() {
+        System.out.println("Test Case Ended...");
+    }
+    @Test 
+    public void testSayHello() {
+        // Demo obj = new Demo();
+        assertEquals("Welcome to Junit...", obj.sayHello());
+    }
+    @Test 
+    public void testSum() {
+        // Demo obj = new Demo();
+        assertEquals(5, obj.sum(2,3));
+    }
+    @Test 
+    public void testMax3() {
+        // Demo obj = new Demo();
+        assertEquals(5, obj.max3(2,3,5));
+    }
+}
+
+For the above code 
+
+Global Object Created...
+Test Case Started...
+Test Case Ended...
+Test Case Started...
+Test Case Ended...
+Test Case Started...
+Test Case Ended...
+Object Deallocated...
+
+______________________________________________________________________
+
+@BeforeClass annotation will be executed only once in entire testing phase and will be executed
+before starting testing.
+
+@AfterClass annotationn will be executed only once in entire testing phase and will be executed
+before closing testing. 
+
+@Before annotation method will be executed for each and every test case. Means if you have 3 test cases before test cases this method will execute so 3 times it will execute before testing. 
+
+@After annotation method will be executed for reach and every test case ending. means if you have 3 test cases, the code will run 3 times. 
+
+_____________________________________________
+
+
+public void before() {
+    System.out.println("before");
+   }
+   @After 
+   public void after() {
+    System.out.println("After");
+  }
+   @Test
+   public void test1() {
+    System.out.println("Test 1");
+   }
+
+   @Test
+   public void test2() {
+    System.out.println("Test2");
+   }
+}
+
+O/P : 
+
+Test1
+after
+Test2
+after
+_____________________________________________________________________________
+public class JunitTest {
+ 
+   @BeforeClass
+   public static void beforeClass() {
+     System.out.println("BeforeClass...");
+   }
+   @AfterClass 
+   public static void afterClass() {
+     System.out.println("AfterClass...");
+   }
+
+   public void before() {
+    System.out.println("Before...");
+   }
+   @After 
+   public void after() {
+    System.out.println("After...");
+   }
+}
+
+BeforeClass
+After
+AfterClass
+___________________________________________________________________________
+
+
+
+public class DummyTest {
+   @BeforeClass
+   public static void beforeClass() {
+     System.out.println("BeforeClass...");
+   }
+   @AfterClass 
+   public static void afterClass() {
+     System.out.println("AfterClass...");
+   }
+
+   public void before() {
+    System.out.println("Before...");
+   }
+   @After 
+   public void after() {
+    System.out.println("After...");
+   }
+
+
+}
+
+Nothing will print as it dont have any valid @Test case. 
+__________________________________________________________________________________________
+package com.hexaware.trainer;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import org.junit.After;  
+import org.junit.AfterClass;  
+import org.junit.Before;  
+import org.junit.BeforeClass;
+
+import org.junit.Test;
+
+
+public class DummyTest {
+   @BeforeClass
+   public static void beforeClass() {
+     System.out.println("BeforeClass...");
+   }
+   @AfterClass 
+   public static void afterClass() {
+     System.out.println("AfterClass...");
+   }
+
+   @Test 
+   public void testMe() {
+       assertEquals("Hi","Hi");
+   }
+   public void before() {
+    System.out.println("Before...");
+   }
+   @After 
+   public void after() {
+    System.out.println("After...");
+   }
+}
+
+
+For this, output as 
+
+BeforeClass...
+After...
+AfterClass...
+
+_________________________________________________________________________________
+
+
+
+If you don't have one valid @Test case, nothing will execute. 
+
+For executing @BeforeClass, @AfterClass, @Before and @After we need one valid test case mandetory. 
+
+______________________________________________________________________________________
+
+@BeforeClass
+   public static void beforeClass() {
+     System.out.println("BeforeClass...");
+   }
+   @AfterClass 
+   public static void afterClass() {
+     System.out.println("AfterClass...");
+   }
+   @Before
+   public void before() {
+    System.out.println("Before...");
+   }
+   @Test
+   public void testSayHello() {
+     assertEquals("Hello","Hello");
+   }
+   @After 
+   public void after() {
+    System.out.println("After...");
+   }
+a) beforeclass 
+   before
+   after
+   AfterClass
+_________________________________________________________________________________________
+
+public class Junit4Test {
+  @Test 
+  public void test() {
+    Assert.assertTrue(false);
+  }
+  @Test
+  public void test2() {
+    assert false;
+  }
+}
+
+O/P : assertion Error 
+
+________________________________________________________________________________________
+
+ @Test 
+   public void testMe() {
+       assertEquals("November Batch","Hi","Hi");
+   }
+
+    @Test 
+   public void testFail() {
+       assertEquals("November Batch","Hi","Hello");
+   }
+
+
+  assertEquals("Error in String","Hello","hello");
+
+Here, first arg is the error message caption
+
+	if values are same, it prints no message
+
+	if values are wrong, then it prints Caption message with System error message. First arg. always the caption error msg. 
+
+___________________________________________________________________________________________________
+
+Webservices you will get 5 questions :
+
+
+Types of webservices 
+
+1) SOAP (Simple Object Access Protocol)
+
+	SOAP only deals with XML Data
+
+2) REST (Representation State Transfer) 
+
+	Allows you to deal with XML, JSON, HTML etc...
+
+3) MIME (Multi-Purpose Internet Mail Extension)
+
+4) FTP (File Transfer Protocol)
+
+5) HTTP (HyperText Transfer Protocol)
+
+____________________________________________________________________________________________________
+
+CLOUD AWS (Amazon Web Services)
+
+Allows you to store data in enterprise servers which is ready to use. 
+
+Here, we can store Data, Applications, Softwares etc...
+
+What is Private Cloud
+
+A private cloud also provides almost similar features as public cloud, but the 
+data and services are managed by the organization or by the third party 
+only for the customer’s organization. In this type of cloud, major control is 
+over the infrastructure so security related issues are minimized 
+
+Example : Personal Car
+
+What is Public Cloud
+
+In public cloud, the third-party service providers make resources and 
+services available to their customers via Internet. Customer’s data and 
+related security is with the service providers’ owned infrastructure
+
+Example : Transport Bus
+
+What is Hybrid Cloud
+
+A hybrid cloud is the combination of both private and public cloud. The 
+decision to run on private or public cloud usually depends on various 
+parameters like sensitivity of data and applications, industry certifications 
+and required standards, regulations, etc.
+
+Example : Hire Cab and go
+
+
+Service Model 
+_____________
+
+SAAS (Software as Service)
+
+Software as a service refers to the practice of directly 
+providing the software to the customer, without making any 
+server or dashboard available to them 
+Ex : Teams
+
+
+PAAS (Platform as Service)
+
+In Platform as a service , one does not get access to the 
+whole Operating System. Rather access is given to a 
+dashboard level, where a user uploads data,and the rest is 
+taken care by the local provider
+Ex:Visual Studio
+
+IAAS (Infrastructure as Service)
+
+Infrastructure as a Service refers to providing the complete 
+access to the server’s OS . Typically IAAS provides 
+hardware,storage,servers and data center or network 
+components ; it may also include software 
+
+Eg: Virtual Network
+
+Amazon Web Service
+• Amazon Web Services (AWS) is a secure cloud services platform, offering 
+compute power, database storage, content delivery and other functionality to 
+help businesses scale and grow
+
+
+
+
+
+
+
+
+
+
+
